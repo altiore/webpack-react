@@ -135,7 +135,7 @@ module.exports = {
               eslintPath: require.resolve('eslint'),
               // @remove-on-eject-begin
               baseConfig: {
-                extends: [require('./eslint.config')],
+                extends: [require.resolve('./eslint.config')],
               },
               ignore: false,
               useEslintrc: false,
