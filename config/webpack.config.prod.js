@@ -141,7 +141,7 @@ module.exports = {
               // TODO: consider separate config for production,
               // e.g. to enable no-console and no-debugger only in production.
               baseConfig: {
-                extends: [require('./eslint.config')],
+                extends: [require.resolve('./eslint.config')],
               },
               ignore: false,
               useEslintrc: false,
@@ -175,7 +175,7 @@ module.exports = {
             options: {
               // @remove-on-eject-begin
               babelrc: false,
-              presets: [require('./babel.presets')],
+              presets: [require.resolve('./babel.presets')],
               // @remove-on-eject-end
               compact: true,
             },

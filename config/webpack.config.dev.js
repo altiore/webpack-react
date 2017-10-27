@@ -135,7 +135,7 @@ module.exports = {
               eslintPath: require.resolve('eslint'),
               // @remove-on-eject-begin
               baseConfig: {
-                extends: [require('./eslint.config')],
+                extends: [require.resolve('./eslint.config')],
               },
               ignore: false,
               useEslintrc: false,
@@ -170,7 +170,7 @@ module.exports = {
             options: {
               // @remove-on-eject-begin
               babelrc: false,
-              presets: [require('./babel.presets')],
+              presets: [require.resolve('./babel.presets')],
               // @remove-on-eject-end
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
