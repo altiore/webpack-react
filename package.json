@@ -31,5 +31,9 @@
   "bugs": {
     "url": "https://github.com/altiore/webpack-react/issues"
   },
-  "homepage": "https://github.com/altiore/webpack-react#readme"
+  "homepage": "https://github.com/altiore/webpack-react#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "react-dev-utils": "^4.1.0"
+  }
 }
