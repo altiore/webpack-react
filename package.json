@@ -2,7 +2,19 @@
   "name": "altiore-webpack-react",
   "version": "1.0.0",
   "description": "Webpack 3 Example for react 16",
-  "main": "index.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "bin",
+    "config",
+    "scripts",
+    "template",
+    "utils"
+  ],
+  "bin": {
+    "altiore": "./bin/altiore-scripts.js"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -14,7 +26,7 @@
     "webpack",
     "react"
   ],
-  "author": "altiore.public@gmail.com",
+  "author": "Altiore <altiore.public@gmail.com> (https://altiore.org)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/altiore/webpack-react/issues"
