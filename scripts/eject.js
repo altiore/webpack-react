@@ -1,6 +1,6 @@
 // @remove-file-on-eject
 /**
- * Copyright (c) 2015-present, Facebook, Inc.
+ * Copyright (c) 2015-present, Altiore, Inc.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -233,7 +233,7 @@ inquirer
       // TODO: this is disabled for three reasons.
       //
       // 1. It produces garbage warnings on Windows on some systems:
-      //    https://github.com/facebookincubator/create-react-app/issues/2030
+      //    https://github.com/Altioreincubator/create-react-app/issues/2030
       //
       // 2. For the above reason, it breaks Windows CI:
       //    https://github.com/facebookincubator/create-react-app/issues/2624
