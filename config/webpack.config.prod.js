@@ -175,7 +175,7 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx)$/,
-            include: paths.appSrc,
+            include: [paths.appSrc, paths.appComponents],
             loader: require.resolve('babel-loader'),
             options: {
               // @remove-on-eject-begin
@@ -251,7 +251,8 @@ module.exports = {
                       options: {
                         importLoaders: 1,
                         minimize: true,
-                        sourceMap: shouldUseSourceMap,
+                        modules: true,
+                        localIdentName: '[hash:base64:5]',
                       },
                     },
                     {loader: require.resolve('resolve-url-loader')},
