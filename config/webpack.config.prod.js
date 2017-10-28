@@ -275,7 +275,15 @@ module.exports = {
                         ],
                       },
                     },
-                    {loader: require.resolve('sass-loader')},
+                    {
+                      loader: require.resolve('sass-loader'),
+                      options: {
+                        data: '@import "app.scss";',
+                        includePaths: [
+                          path.resolve(paths.appSrc, 'styles')
+                        ],
+                      },
+                    },
                   ],
                 },
                 extractTextPluginOptions
