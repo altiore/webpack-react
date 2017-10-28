@@ -1,0 +1,47 @@
+{
+  "plugins": [
+    "transform-runtime",
+    "transform-class-properties",
+    "transform-export-extensions",
+    ["module-resolver", {
+      "root": ["./app"],
+      "alias": {
+        "root": "./",
+        "static": "./static"
+      }
+    }]
+  ],
+  "presets": [
+    ["env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["last 2 versions"]
+      },
+      "useBuiltIns": true
+    }],
+    "react",
+    "stage-2"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-react-remove-prop-types"
+      ],
+      "presets": [
+      ]
+    },
+    "development": {
+      "presets": [
+      ],
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    },
+    "test": {
+      "presets": ["env", "react", "stage-2"],
+      "plugins": [
+        "transform-react-remove-prop-types"
+      ]
+    }
+  }
+}

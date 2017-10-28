@@ -16,7 +16,7 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
+// const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 
@@ -106,6 +106,10 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      // this is folders which enabled in altiore version by default
+      'app': paths.appSrc,
+      'components': paths.appComponents,
+      'static': paths.appStatic,
     },
     plugins: [
       // Prevents users from importing files from outside of app/ (or node_modules/).
@@ -113,7 +117,8 @@ module.exports = {
       // To fix this, we prevent you from importing files out of app/ -- if you'd like to,
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
-      new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+      // new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+      // @altiore commented because we should be able serve folders components and static
     ],
   },
   module: {
@@ -144,7 +149,7 @@ module.exports = {
             loader: require.resolve('eslint-loader'),
           },
         ],
-        include: paths.appSrc,
+        include: [paths.appSrc, paths.appComponents],
       },
       {
         // "oneOf" will traverse all following loaders until one will
