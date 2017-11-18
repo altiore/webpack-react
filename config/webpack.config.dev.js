@@ -209,6 +209,9 @@ module.exports = {
                   ident: 'postcss',
                   plugins: () => [
                     require('postcss-flexbugs-fixes'),
+                    /* eslint-disable global-require */
+                    require('postcss-cssnext'),
+                    /* eslint-enable global-require */
                     autoprefixer({
                       browsers: [
                         '>1%',
