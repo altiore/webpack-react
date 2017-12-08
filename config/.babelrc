@@ -19,8 +19,8 @@
       },
       "useBuiltIns": true
     }],
-    "react",
-    "stage-2"
+    "stage-2",
+    "react"
   ],
   "env": {
     "production": {
@@ -38,7 +38,7 @@
       ]
     },
     "test": {
-      "presets": ["env", "react", "stage-2"],
+      "presets": ["env", "stage-2", "react"],
       "plugins": [
         "transform-react-remove-prop-types"
       ]
