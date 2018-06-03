@@ -1,2 +1,11 @@
 .idea
-/node_modules
+.vscode/
+node_modules/
+.DS_Store
+template/src/__tests__/__snapshots__/
+lerna-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/.changelog
+yarn-error.log
