@@ -22,6 +22,8 @@ const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -301,7 +303,7 @@ module.exports = {
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
           },
           {
-            test: /\.scss$/,
+            test: /^((?!\.m).)*\.scss$/,
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -402,6 +404,10 @@ module.exports = {
     // Otherwise React will be compiled in the very slow development mode.
     new webpack.DefinePlugin(env.stringified),
     // Minify the code.
+    // new LodashModuleReplacementPlugin({
+    //   'collections': true,
+    //   'paths': true,
+    // }),
     new UglifyJsPlugin({
       uglifyOptions: {
         parse: {
@@ -488,6 +494,10 @@ module.exports = {
       async: false,
       tsconfig: paths.appTsProdConfig,
       tslint: paths.appTsLint,
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
     }),
   ],
   // Some libraries import Node modules but don't use them in the browser.

@@ -266,7 +266,7 @@ module.exports = {
             ],
           },
           {
-            test: /\.scss$/,
+            test: /^((?!\.m).)*\.scss$/,
             use: [
               require.resolve('style-loader'),
               {
