@@ -1,6 +1,6 @@
 {
   "name": "altiore-webpack-react",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Webpack 3 Example for react 16",
   "engines": {
     "node": ">=6"
