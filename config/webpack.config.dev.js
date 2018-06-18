@@ -257,7 +257,7 @@ module.exports = {
               {
                 loader: require.resolve('sass-loader'),
                 options: {
-                  data: '@import "app.scss";',
+                  data: '@import "variables.scss";',
                   includePaths: [
                     path.resolve(paths.appSrc, 'styles')
                   ],
@@ -298,7 +298,7 @@ module.exports = {
               {
                 loader: require.resolve('sass-loader'),
                 options: {
-                  data: '@import "app.scss";',
+                  data: '@import "variables.scss";',
                   includePaths: [
                     path.resolve(paths.appSrc, 'styles')
                   ],
